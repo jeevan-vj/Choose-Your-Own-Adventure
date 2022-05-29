@@ -12,7 +12,7 @@ docker-compose up
 ```
 alternatively run. This will open up the browser once app is running.
 ```shell
-sh .\start.sh
+sh ./start.sh
 ```
 
 App will be run on [localhost:4200](https://localhost:4200)
