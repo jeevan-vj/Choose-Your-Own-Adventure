@@ -27,8 +27,8 @@ public class UpdateAdventureCommandHandler : IRequestHandler<UpdateAdventureComm
     }
 
     var adventureItem = _mapper.Map<AdventureItem>(request.Adventure);
-    var result = await _adventureRepository.AddAsync(adventureItem, cancellationToken);
-    var resultDto = _mapper.Map<AdventureDto>(result);
-    return resultDto;
+     await _adventureRepository.UpdateAsync(request.Adventure.Id, adventureItem, cancellationToken);
+   
+    return request.Adventure;
   }
 }

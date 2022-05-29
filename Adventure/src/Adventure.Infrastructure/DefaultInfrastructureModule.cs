@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Adventure.Core.Models;
+using Adventure.Infrastructure.Data;
+using Adventure.Infrastructure.Interfaces;
 using Adventure.SharedKernel.Interfaces;
 using Autofac;
 using MediatR;
@@ -51,10 +53,10 @@ public class DefaultInfrastructureModule : Module
 
   private void RegisterCommonDependencies(ContainerBuilder builder)
   {
-    /*builder.RegisterGeneric(typeof(EfRepository<>))
+    builder.RegisterGeneric(typeof(MongoRepository<>))
       .As(typeof(IRepository<>))
       .As(typeof(IReadRepository<>))
-      .InstancePerLifetimeScope();*/
+      .InstancePerLifetimeScope();
 
     builder
       .RegisterType<Mediator>()

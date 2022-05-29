@@ -1,6 +1,7 @@
 ﻿using Adventure.Web.Commands;
 using Adventure.Web.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Adventure.Web.Api;

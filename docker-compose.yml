@@ -4,19 +4,17 @@ services:
     image: mongo
     container_name: adven-db
     volumes:
-      - ./mongo_data:/data/db
+      - ./Adventure/mongo_data:/data/db
 
   advenweb-api:
     build:
       context: .
-      dockerfile: ./src/Dockerfile
+      dockerfile: ./Adventure/src/Dockerfile
     image: advenweb.api
     container_name: advenweb.api
     ports:
       - 4200:80
     environment:
-      - ASPNETCORE_ENVIRONMENT=Docker
-      - "ASPNETCORE_URLS=http://+"
       - "AdventureStoreDatabase.ConnectionString=mongodb://mongo-db:27017"
     restart: on-failure
     depends_on:

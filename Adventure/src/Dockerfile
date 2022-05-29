@@ -7,11 +7,11 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
 COPY ./ ./
-#RUN ls -lha .
+RUN ls -lha .
 
 RUN echo 'Building Adventure container'
 
-WORKDIR /app/src/Adventure.Web
+WORKDIR /app/Adventure/src/Adventure.Web
 
 RUN dotnet restore
 
