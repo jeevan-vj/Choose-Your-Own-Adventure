@@ -54,17 +54,17 @@ public class AdventureController : BaseApiController
 
   [HttpPost]
   [Route("take-adventure")]
-  //[Authorize]
+  [Authorize]
   public async Task<IActionResult> Post([FromBody] CreateUserAdventureCommand request)
   {
-    request.UserId = 1; //GetUserId();
+    request.UserId = GetUserId();
     var commandResult = await _mediator.Send(request);
     return Ok(commandResult);
   }
 
   [HttpGet]
   [Route("my-adventures")]
-  //[Authorize]
+  [Authorize]
   public async Task<IActionResult> Get()
   {
     var query = new GetMyAdventuresQuery(1);
@@ -75,7 +75,7 @@ public class AdventureController : BaseApiController
 
   [HttpGet]
   [Route("my-adventure/{adventureId}")]
-  //[Authorize]
+  [Authorize]
   public async Task<IActionResult> GetMyAdventureById(string adventureId)
   {
     var query = new GetMyAdventureByIdQuery(adventureId);
