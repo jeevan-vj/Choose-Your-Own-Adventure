@@ -39,6 +39,10 @@ Certain End Points need Authentication
 2. Choice can have multiple options. 
 3. If No options in Choice means it an End(Final State) of Adventure. 
 
+# Tech Stack 
+- ASP.NET (.Net6)
+- Mongo DB
+
 # Sample API Test Data
 
 ### api/Adventure/create-adventure
