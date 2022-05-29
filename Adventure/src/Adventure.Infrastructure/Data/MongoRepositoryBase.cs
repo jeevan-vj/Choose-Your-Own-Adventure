@@ -1,8 +1,6 @@
 ﻿using System.Linq.Expressions;
 using Adventure.Infrastructure.Interfaces;
 using Adventure.SharedKernel.Interfaces;
-using Adventure.Infrastructure.Interfaces;
-using Adventure.SharedKernel.Interfaces;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
@@ -56,7 +54,8 @@ public abstract class MongoRepositoryBase<T> : IRepositoryBase<T> where T : clas
     return await _adventureCollection.Find(_ => true).ToListAsync(cancellationToken);
   }
 
-  public virtual async Task<List<T>> ListAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default)
+  public virtual async Task<List<T>> ListAsync(Expression<Func<T, bool>> filter,
+    CancellationToken cancellationToken = default)
   {
     return await _adventureCollection.Find(_ => true).ToListAsync(cancellationToken);
   }
