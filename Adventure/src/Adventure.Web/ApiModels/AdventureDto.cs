@@ -10,22 +10,3 @@ public record AdventureDto
 
   public string? Id { get; init; }
 }
-
-public record CreateAdventureDto
-{
-  public string? Title { get; init; }
-
-  public CreateChoiceDto Choice { get; init; }
-}
-
-public record CreateChoiceDto
-{
-  public string Title { get; init; }
-  public IEnumerable<CreateOptionDto>? Options { get; set; }
-}
-
-public record CreateOptionDto
-{
-  public string Title { get; init; }
-  public CreateChoiceDto Next { get; init; }
-}
