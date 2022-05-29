@@ -33,8 +33,4 @@
       <_ContentIncludedByDefault Remove="Views\Project\Index.cshtml" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="ApiModels" />
-    </ItemGroup>
-
 </Project>
